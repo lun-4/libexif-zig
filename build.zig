@@ -47,7 +47,7 @@ pub fn build(b: *std.Build) void {
     const libexif_dep = b.dependency("libexif", .{});
 
     const lib = b.addStaticLibrary(.{
-        .name = "libexif",
+        .name = "exif",
         .target = target,
         .optimize = optimize,
         .link_libc = true,
