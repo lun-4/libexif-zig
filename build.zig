@@ -52,8 +52,8 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
         .link_libc = true,
     });
-    lib.defineCMacro("LOCALEDIR", "\"/usr/share/locale\"");
-    lib.defineCMacro("GETTEXT_PACKAGE", "\"libexif\"");
+    lib.root_module.addCMacro("LOCALEDIR", "\"/usr/share/locale\"");
+    lib.root_module.addCMacro("GETTEXT_PACKAGE", "\"libexif\"");
     lib.addConfigHeader(config_h);
     lib.addCSourceFiles(.{
         .root = libexif_dep.path("libexif"),
